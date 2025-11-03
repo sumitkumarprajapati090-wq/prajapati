@@ -1,0 +1,461 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Sumit Kumar Prajapati — Canva Expert & Visual Designer</title>
+  <meta name="description" content="Canva expert creating presentations, social graphics and brand templates. Book a design or training session with Sumit Kumar Prajapati." />
+  <!-- Open Graph -->
+  <meta property="og:title" content="Sumit Kumar Prajapati — Canva Expert & Visual Designer" />
+  <meta property="og:description" content="Canva expert creating presentations, social graphics and brand templates. Book a design or training session with Sumit." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="/assets/og-image.jpg" />
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    /* ---- Root / Variables ---- */
+    :root{
+      --bg: #ffffff;
+      --text: #0b1220;
+      --muted: #6b7280;
+      --accent: #0f766e; /* warm teal */
+      --card: #fbfbfb;
+      --glass: rgba(15,118,110,0.06);
+      --radius: 14px;
+      --shadow: 0 6px 18px rgba(7,10,13,0.08);
+      --container: 1100px;
+      --ease: cubic-bezier(.2,.9,.2,1);
+    }
+
+    /* ---- Basic reset ---- */
+    *{box-sizing:border-box}
+    html{font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial;line-height:1.4;color:var(--text);}
+    body{margin:0;background:var(--bg);-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+    img{max-width:100%;display:block}
+    a{color:inherit;text-decoration:none}
+
+    /* ---- Layout ---- */
+    .wrap{max-width:var(--container);margin:0 auto;padding:28px;}
+    header{position:sticky;top:12px;z-index:60;background:transparent;padding:8px 0;backdrop-filter: blur(6px)}
+    .nav{display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .brand{display:flex;gap:12px;align-items:center}
+    .logo{width:46px;height:46px;border-radius:12px;background:linear-gradient(135deg,var(--accent),#063547);display:flex;align-items:center;justify-content:center;color:white;font-weight:700;box-shadow:var(--shadow)}
+
+    nav ul{display:flex;gap:18px;list-style:none;margin:0;padding:0;align-items:center}
+    nav a{font-weight:600;font-size:15px;color:var(--muted)}
+    .nav-cta{display:flex;gap:10px;align-items:center}
+    .social-row{display:flex;gap:8px}
+    .social-row a{width:36px;height:36px;border-radius:10px;background:var(--card);display:flex;align-items:center;justify-content:center;box-shadow:var(--shadow)}
+
+    /* ---- Hero ---- */
+    .hero{display:grid;grid-template-columns:1fr 340px;align-items:center;gap:28px;padding:56px 0}
+    .hero .content{max-width:720px}
+    h1{font-size:clamp(26px,4.2vw,42px);margin:0 0 12px;line-height:1.02}
+    .sub{color:var(--muted);font-size:16px;margin-bottom:18px}
+    .cta{display:flex;gap:12px;align-items:center}
+    .btn{padding:12px 18px;border-radius:12px;font-weight:700;border:0;cursor:pointer;transition:all .2s var(--ease);box-shadow:var(--shadow)}
+    .btn-primary{background:var(--accent);color:white}
+    .btn-outline{background:transparent;border:1px solid rgba(11,18,32,0.06);color:var(--text)}
+    .trust{color:var(--muted);font-size:14px;margin-top:14px}
+
+    .portrait{justify-self:end}
+    .portrait .frame{width:320px;height:320px;border-radius:50%;overflow:hidden;box-shadow:var(--shadow);border:6px solid rgba(255,255,255,0.6)}
+
+    /* ---- Sections ---- */
+    section{padding:56px 0;border-top:1px solid rgba(9,10,11,0.03)}
+    .section-head{display:flex;align-items:end;justify-content:space-between;gap:12px;margin-bottom:18px}
+
+    .grid{display:grid;gap:18px}
+
+    /* About */
+    .about{grid-template-columns:1fr 300px}
+    .specs{display:flex;flex-direction:column;gap:8px;margin-top:12px}
+    .specs li{background:var(--card);padding:10px;border-radius:12px;list-style:none;box-shadow:var(--shadow);font-weight:600}
+
+    /* Services */
+    .services{grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+    .card{background:var(--card);padding:18px;border-radius:var(--radius);box-shadow:var(--shadow);transition:transform .22s var(--ease)}
+    .card:hover{transform:translateY(-6px)}
+    .price{font-weight:700;color:var(--accent);margin-top:10px}
+
+    /* Portfolio */
+    .portfolio-grid{grid-template-columns:repeat(auto-fit,minmax(160px,1fr));}
+    .thumbnail{border-radius:12px;overflow:hidden;cursor:pointer;position:relative}
+    .thumbnail img{width:100%;height:160px;object-fit:cover}
+    .filter-row{display:flex;gap:8px}
+    .pill{padding:8px 12px;border-radius:999px;background:var(--card);cursor:pointer;font-weight:600}
+
+    /* Process timeline */
+    .timeline{display:flex;gap:16px;align-items:center}
+    .step{background:linear-gradient(180deg,#fff,#fbfffd);padding:16px;border-radius:12px;box-shadow:var(--shadow);min-width:180px}
+
+    /* Testimonials */
+    .test-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
+    .quote{padding:14px;border-radius:12px;background:var(--card);box-shadow:var(--shadow)}
+
+    /* Contact */
+    .contact-grid{display:grid;grid-template-columns:1fr 320px;gap:18px}
+    form{display:flex;flex-direction:column;gap:10px}
+    input,textarea,select{padding:12px;border-radius:10px;border:1px solid rgba(9,10,11,0.06);font-size:15px}
+    label{font-weight:600;font-size:13px}
+    .large-btn{padding:14px;border-radius:12px}
+
+    footer{padding:28px 0;color:var(--muted);font-size:14px}
+
+    /* ---- Lightbox ---- */
+    .lightbox{position:fixed;inset:0;background:rgba(5,6,7,0.6);display:none;align-items:center;justify-content:center;padding:20px}
+    .lightbox.show{display:flex}
+    .lbcard{max-width:900px;background:white;padding:18px;border-radius:14px;box-shadow:0 20px 50px rgba(0,0,0,0.4)}
+
+    /* ---- Responsive ---- */
+    @media (max-width:900px){
+      .hero{grid-template-columns:1fr;}
+      .portrait{justify-self:center}
+      .wrap{padding:18px}
+      .contact-grid{grid-template-columns:1fr}
+      .about{grid-template-columns:1fr}
+    }
+  </style>
+
+  <!-- Structured Data (Person) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Sumit Kumar Prajapati",
+    "jobTitle": "Canva Expert & Visual Designer",
+    "sameAs": [
+      "https://instagram.com/yourusername",
+      "https://facebook.com/yourusername"
+    ],
+    "email": "mailto:yourname@",
+    "url": "https://yourwebsite.com"
+  }
+  </script>
+
+  <!-- Google Analytics (GA4) - replace G-XXXXXXX -->
+  <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments)}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXX');
+  </script> -->
+
+</head>
+<body>
+  <header class="wrap">
+    <div class="nav">
+      <div class="brand">
+        <div class="logo" aria-hidden="true">SK</div>
+        <div>
+          <div style="font-weight:800">Sumit Kumar Prajapati</div>
+          <div style="font-size:12px;color:var(--muted);">Canva Expert & Visual Designer</div>
+        </div>
+      </div>
+
+      <nav aria-label="Main navigation">
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#portfolio">Portfolio</a></li>
+          <li><a href="#testimonials">Testimonials</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-cta">
+        <div class="social-row" aria-hidden="false">
+          <a href="https://instagram.com/yourusername" target="_blank" aria-label="Instagram" rel="noopener noreferrer">IG</a>
+          <a href="https://facebook.com/yourusername" target="_blank" aria-label="Facebook" rel="noopener noreferrer">FB</a>
+          <a href="mailto:yourname@" aria-label="Email">@</a>
+        </div>
+        <button class="btn btn-primary" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Contact Me</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap" id="home">
+    <!-- HERO -->
+    <section class="hero" aria-label="Introduction">
+      <div class="content">
+        <h1>I'm Sumit Kumar Prajapati — Canva Expert & Visual Designer</h1>
+        <p class="sub">I design eye-catching presentations, social graphics and brand assets that get noticed.</p>
+        <div class="cta">
+          <button class="btn btn-primary" onclick="document.getElementById('portfolio').scrollIntoView({behavior:'smooth'})">View Portfolio</button>
+          <button class="btn btn-outline" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Contact Me</button>
+        </div>
+        <div class="trust">Trusted by entrepreneurs, educators and small businesses.</div>
+      </div>
+
+      <div class="portrait" aria-hidden="true">
+        <div class="frame">
+          <img src="/assets/portrait.jpg" alt="Portrait of Sumit Kumar Prajapati" style="width:100%;height:100%;object-fit:cover">
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about">
+      <div class="section-head">
+        <h2>About</h2>
+        <div style="color:var(--muted);">Hi — I’m Sumit. I turn ideas into polished visual content using Canva and modern design best practices.</div>
+      </div>
+      <div class="grid about">
+        <div>
+          <p>Hi — I’m Sumit. I turn ideas into polished visual content using Canva. I specialize in presentation design, social graphics and editable templates that clients can reuse.</p>
+
+          <ul class="specs">
+            <li>Presentation Templates</li>
+            <li>Instagram Posts & Reels Graphics</li>
+            <li>Brand Kits</li>
+            <li>Editable Canva Templates</li>
+          </ul>
+        </div>
+
+        <aside>
+          <div class="card">
+            <h3 style="margin-top:0">Quick facts</h3>
+            <p style="color:var(--muted)">Available for freelance projects, consulting and 1:1 training sessions.</p>
+            <p style="margin-top:12px"><strong>Location:</strong> India</p>
+            <p style="margin-top:6px"><strong>Response time:</strong> Usually within 24 hours</p>
+            <a href="/assets/Sumit-Kumar-Portfolio.pdf" download class="btn" style="margin-top:12px">Download Resume</a>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section id="services">
+      <div class="section-head"><h2>Services</h2><div style="color:var(--muted)">Design services tailored for small teams and creators.</div></div>
+      <div class="grid services">
+        <div class="card">
+          <h3>Presentation Design</h3>
+          <p>Custom slide decks, animations and exports to MP4 or PNG. I deliver editable Canva files so you can update later.</p>
+          <div class="price">Starting at ₹3,500</div>
+        </div>
+
+        <div class="card">
+          <h3>Social Media Graphics</h3>
+          <p>Instagram & Facebook posts, reels cover art and a set of reusable templates.</p>
+          <div class="price">Starting at ₹1,200</div>
+        </div>
+
+        <div class="card">
+          <h3>Brand & Template Kits</h3>
+          <p>Logo suggestions, color palettes and editable Canva templates for a cohesive brand look.</p>
+          <div class="price">Starting at ₹6,000</div>
+        </div>
+
+        <div class="card">
+          <h3>Consultation & Training</h3>
+          <p>One-on-one Canva training sessions to help you speed up content creation and master templates.</p>
+          <div class="price">Starting at ₹1,000 / hour</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PORTFOLIO -->
+    <section id="portfolio">
+      <div class="section-head">
+        <h2>Portfolio</h2>
+        <div class="filter-row" role="tablist" aria-label="Portfolio filters">
+          <button class="pill" data-filter="all">All</button>
+          <button class="pill" data-filter="presentations">Presentations</button>
+          <button class="pill" data-filter="social">Social</button>
+          <button class="pill" data-filter="branding">Branding</button>
+        </div>
+      </div>
+
+      <div class="grid portfolio-grid" id="portfolioGrid">
+        <!-- Example items: replace images & metadata -->
+        <div class="thumbnail card" data-type="presentations" tabindex="0" aria-label="Project: Investor Pitch Deck" onclick="openLightbox(0)">
+          <img src="/assets/portfolio-1.jpg" alt="Investor pitch deck thumbnail">
+        </div>
+        <div class="thumbnail card" data-type="social" tabindex="0" onclick="openLightbox(1)">
+          <img src="/assets/portfolio-2.jpg" alt="Instagram carousel thumbnail">
+        </div>
+        <div class="thumbnail card" data-type="branding" tabindex="0" onclick="openLightbox(2)">
+          <img src="/assets/portfolio-3.jpg" alt="Brand kit thumbnail">
+        </div>
+        <div class="thumbnail card" data-type="presentations" tabindex="0" onclick="openLightbox(3)">
+          <img src="/assets/portfolio-4.jpg" alt="Pitch deck slide thumbnail">
+        </div>
+        <div class="thumbnail card" data-type="social" tabindex="0" onclick="openLightbox(4)">
+          <img src="/assets/portfolio-5.jpg" alt="Social post template thumbnail">
+        </div>
+        <div class="thumbnail card" data-type="branding" tabindex="0" onclick="openLightbox(5)">
+          <img src="/assets/portfolio-6.jpg" alt="Logo & palette thumbnail">
+        </div>
+      </div>
+    </section>
+
+    <!-- LIGHTBOX -->
+    <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-hidden="true" onclick="closeLightbox(event)">
+      <div class="lbcard" onclick="event.stopPropagation()">
+        <button onclick="closeLightbox(event)" style="float:right;border:0;background:none;font-weight:800;font-size:18px;">✕</button>
+        <div id="lbContent"></div>
+      </div>
+    </div>
+
+    <!-- PROCESS -->
+    <section id="process">
+      <div class="section-head"><h2>How I work</h2><div style="color:var(--muted)">A quick 3-step process so you know what to expect.</div></div>
+      <div class="timeline">
+        <div class="step">
+          <strong>1) Brief & Research</strong>
+          <p style="color:var(--muted)">We define goals, audience and assets required.</p>
+        </div>
+        <div class="step">
+          <strong>2) Design & Revise</strong>
+          <p style="color:var(--muted)">Drafts, feedback rounds and refinements until you're happy.</p>
+        </div>
+        <div class="step">
+          <strong>3) Final files & Handoff</strong>
+          <p style="color:var(--muted)">Editable Canva files, exports and quick usage notes.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section id="testimonials">
+      <div class="section-head"><h2>Testimonials</h2><div style="color:var(--muted)">Happy clients.</div></div>
+      <div class="test-grid">
+        <div class="quote">
+          <p>“Sumit's designs helped our pitch stand out — we raised funding the next month.”</p>
+          <div style="display:flex;gap:10px;align-items:center;margin-top:12px"><img src="/assets/client-1.jpg" alt="Client 1" style="width:42px;height:42px;border-radius:50%"><div><strong>Riya Sharma</strong><div style="color:var(--muted);font-size:13px">Founder, EduStart</div></div></div>
+        </div>
+        <div class="quote">
+          <p>“Quick, professional and easy to update templates — highly recommended."</p>
+          <div style="display:flex;gap:10px;align-items:center;margin-top:12px"><img src="/assets/client-2.jpg" alt="Client 2" style="width:42px;height:42px;border-radius:50%"><div><strong>Akash Verma</strong><div style="color:var(--muted);font-size:13px">Content Lead</div></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+      <div class="section-head"><h2>Contact</h2><div style="color:var(--muted)">Ready to start? Send a message or reach out on social.</div></div>
+      <div class="contact-grid">
+        <div>
+          <!-- Example: use Formspree or Netlify forms in production -->
+          <form id="contactForm" onsubmit="handleSubmit(event)">
+            <label for="name">Name</label>
+            <input id="name" name="name" required aria-required="true" />
+
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" required />
+
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+
+            <label for="pref">Preferred contact</label>
+            <select id="pref" name="pref">
+              <option>Email</option>
+              <option>Instagram</option>
+              <option>Facebook</option>
+            </select>
+
+            <button class="btn btn-primary large-btn" type="submit">Send Message</button>
+          </form>
+        </div>
+
+        <aside>
+          <div class="card">
+            <h3>Contact me</h3>
+            <p style="color:var(--muted)">I usually reply within 24 hours.</p>
+            <div style="display:flex;flex-direction:column;gap:10px;margin-top:12px">
+              <a class="btn" href="https://instagram.com/yourusername" target="_blank" rel="noopener noreferrer">Message on Instagram</a>
+              <a class="btn" href="https://facebook.com/yourusername" target="_blank" rel="noopener noreferrer">Message on Facebook</a>
+              <a class="btn" href="mailto:yourname@">Send an Email</a>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="wrap">
+    <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
+      <div>© <span id="year"></span> Sumit Kumar Prajapati</div>
+      <div style="display:flex;gap:12px;align-items:center">
+        <a href="#privacy">Privacy</a>
+        <a href="#terms">Terms</a>
+        <a href="/assets/Sumit-Kumar-Portfolio.pdf" download>Resume</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Set current year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Smooth keyboard focus for thumbnails
+    document.querySelectorAll('.thumbnail').forEach((el, i) => {
+      el.addEventListener('keyup', (e) => { if(e.key === 'Enter') openLightbox(i) });
+    });
+
+    // Portfolio metadata (replace with your real case summaries)
+    const portfolio = [
+      {title:'Investor Pitch Deck', type:'presentations', image:'/assets/portfolio-1.jpg', summary:'Challenge: need concise investor story.\nSolution: 18-slide deck with clear hierarchy.\nDeliverables: editable Canva file, MP4 export.'},
+      {title:'Instagram Carousel', type:'social', image:'/assets/portfolio-2.jpg', summary:'A 6-card carousel to boost engagement with clear CTAs.'},
+      {title:'Brand Kit', type:'branding', image:'/assets/portfolio-3.jpg', summary:'Logo, palette, and brand usage notes.'},
+      {title:'Pitch Deck — SaaS', type:'presentations', image:'/assets/portfolio-4.jpg', summary:'18-slide investor-ready deck with animated export.'},
+      {title:'Social Template Pack', type:'social', image:'/assets/portfolio-5.jpg', summary:'10 editable post templates for Instagram & Facebook.'},
+      {title:'Logo & Palette', type:'branding', image:'/assets/portfolio-6.jpg', summary:'Logo variations and color system.'}
+    ];
+
+    function openLightbox(idx){
+      const lb = document.getElementById('lightbox');
+      const c = document.getElementById('lbContent');
+      const p = portfolio[idx] || {};
+      c.innerHTML = `<div style="display:flex;gap:16px;flex-wrap:wrap"><img src="${p.image}" alt="${p.title}" style="width:320px;height:240px;object-fit:cover;border-radius:10px"><div style="max-width:460px"><h3>${p.title}</h3><p style='white-space:pre-line;color:var(--muted)'>${p.summary}</p><p><strong>Deliverables:</strong> Editable Canva files, exports</p></div></div>`;
+      lb.classList.add('show');
+      lb.setAttribute('aria-hidden','false');
+    }
+    function closeLightbox(e){
+      const lb = document.getElementById('lightbox');
+      lb.classList.remove('show');
+      lb.setAttribute('aria-hidden','true');
+    }
+
+    // Filters
+    document.querySelectorAll('[data-filter]').forEach(btn=>{
+      btn.addEventListener('click',()=>{
+        const f = btn.getAttribute('data-filter');
+        document.querySelectorAll('#portfolioGrid .thumbnail').forEach(th=>{
+          th.style.display = (f==='all' || th.dataset.type===f) ? 'block' : 'none';
+        })
+      })
+    })
+
+    // Basic form handler (client-side). Replace with Formspree/Netlify in production.
+    function handleSubmit(e){
+      e.preventDefault();
+      const form = document.getElementById('contactForm');
+      const data = {
+        name: form.name.value,
+        email: form.email.value,
+        message: form.message.value,
+        pref: form.pref.value
+      };
+      // Basic validation
+      if(!data.name || !data.email || !data.message){
+        alert('Please fill all required fields.');
+        return;
+      }
+      // Example: open mailto with prefilled body (fallback)
+      const subject = encodeURIComponent('New message from website');
+      const body = encodeURIComponent(`Name: ${data.name}\nEmail: ${data.email}\nPreferred: ${data.pref}\n\n${data.message}`);
+      window.location.href = `mailto:yourname@?subject=${subject}&body=${body}`;
+    }
+
+    // Keyboard accessibility for dialog
+    document.addEventListener('keydown', (e)=>{ if(e.key==='Escape') closeLightbox(); });
+
+  </script>
+</body>
+</html>
